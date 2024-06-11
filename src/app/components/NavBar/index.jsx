@@ -33,17 +33,17 @@ const NavBar = () => {
     const height = window.innerWidth;
     const unsubscribe = scrollY.on("change", (latest) => {
       setBgColor(latest > 300 ? "bg-white" : "bg-transparent");
-      setScrolled(latest > 300);
-      if (latest > 300 && height > 1024) {
+      if (latest > 300 && height > 1024 && !scrolled ) {
+        setScrolled(true);
         handleScrollTitleAnimation();
-      }
-      if (latest <= 300 && height > 1024) {
+      } else if (latest <= 300 && height > 1024 && scrolled) {
+        setScrolled(false);
         handleScrollTitleAnimationEnd();
       }
     });
 
     return () => unsubscribe();
-  }, []);
+  }, [scrolled]);
 
   return (
     <>
