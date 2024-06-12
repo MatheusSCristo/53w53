@@ -33,7 +33,7 @@ const Carousel = ({}) => {
 
         <div className="flex xl:flex-col gap-1 md:text-xl font-semibold xl:absolute bottom-10 justify-center self-center xl:self-start">
           {slides.map((slide, index) => (
-            <span
+            <span key={slide}
               className={`capitalize ${
                 current != index && "opacity-[0.7]"
               } cursor-pointer `}

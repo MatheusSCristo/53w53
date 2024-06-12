@@ -57,7 +57,7 @@ const NavBar = () => {
         className={`z-10 fixed top-0 w-full flex justify-between items-center  p-4 font-semibold ${bgColor} transition duration-800 h-[80px] ${
           menuIsOpen && "md:w-full w-fit md:left-0 right-0 md:z-0 z-30 "
         } `}
-      >
+      > 
         {!menuIsOpen && (
           <motion.button
             initial={{ opacity: 0 }}

@@ -8,7 +8,7 @@ import Third from "./components/Third";
 
 const Home = () => {
   return (
-    <main >
+    <main>
     <Initial/>
     <Second/>
     <Third/>

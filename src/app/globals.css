@@ -6,14 +6,22 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+h1,
+span,
+p,
+h2,
+h3,
+button,
+a {
+  color: #8a6c60;
+}
 
-  h1,
-  span,
-  p,
-  h2,
-  h3,
-  button,
-  a {
-    color: #8a6c60;
-  }
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: 0;  /* Firefox */
 }
