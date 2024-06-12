@@ -53,7 +53,7 @@ const NavBar = () => {
       <motion.nav
         initial={{ height: "100vh" }}
         animate={{ height: "80px" }}
-        transition={{ duration: 1, ease: "easeInOut" }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
         className={`z-10 fixed top-0 w-full flex justify-between items-center  p-4 font-semibold ${bgColor} transition duration-800 h-[80px] ${
           menuIsOpen && "md:w-full w-fit md:left-0 right-0 md:z-0 z-30 "
         } `}
@@ -62,7 +62,7 @@ const NavBar = () => {
           <motion.button
             initial={{ opacity: 0 }}
             animate={{ opacity: [0, 0, 1] }}
-            transition={{ times: [0, 0.95, 1], duration: 1.5 }}
+            transition={{ times: [0, 0.95, 1], duration: 1 }}
             onClick={() => setMenuIsOpen(true)}
             className={`text-lg ${
               scrolled
