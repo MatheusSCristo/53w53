@@ -18,7 +18,7 @@ const Sixth = () => {
       </div>
       <div className="flex justify-between items-start flex-col md:flex-row gap-10 p-4">
         <Link
-          href="/penthouses"
+          href="/lifestyle"
           className="cursor-pointer 2xl:text-2xl border-0 border-brown uppercase border-b-[1px] flex gap-2 items-center font-semibold gap-[40px]"
         >
           Discover The Lifestyle
