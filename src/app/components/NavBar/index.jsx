@@ -31,17 +31,20 @@ const NavBar = () => {
 
   useEffect(() => {
     const height = window.innerWidth;
-    const unsubscribe = scrollY.on("change", (latest) => {
-      setBgColor(latest > 300 ? "bg-white" : "bg-transparent");
-      if (latest > 300 && height > 1024 && !scrolled ) {
-        setScrolled(true);
-        handleScrollTitleAnimation();
-      } else if (latest <= 300 && height > 1024 && scrolled) {
-        setScrolled(false);
-        handleScrollTitleAnimationEnd();
-      }
-    });
 
+    const handleChange = (latest) => {
+      if (latest > 300 && !scrolled) {
+        setBgColor("bg-white");
+        setScrolled(true);
+        if (height > 1024) handleScrollTitleAnimation();
+      } else if (latest <= 300 && scrolled) {
+        setScrolled(false);
+        setBgColor("bg-transparent");
+
+        if (height > 1024) handleScrollTitleAnimationEnd();
+      }
+    };
+    const unsubscribe = scrollY.on("change", handleChange);
     return () => unsubscribe();
   }, [scrolled]);
 
@@ -51,7 +54,7 @@ const NavBar = () => {
         initial={{ height: "100vh" }}
         animate={{ height: "80px" }}
         transition={{ duration: 1, ease: "easeInOut" }}
-        className={`z-10 fixed top-0 w-full flex justify-between items-center text-white p-4 font-semibold ${bgColor} transition duration-800 h-[80px] ${
+        className={`z-10 fixed top-0 w-full flex justify-between items-center  p-4 font-semibold ${bgColor} transition duration-800 h-[80px] ${
           menuIsOpen && "md:w-full w-fit md:left-0 right-0 md:z-0 z-30 "
         } `}
       >
@@ -61,7 +64,7 @@ const NavBar = () => {
             animate={{ opacity: [0, 0, 1] }}
             transition={{ times: [0, 0.95, 1], duration: 1.5 }}
             onClick={() => setMenuIsOpen(true)}
-            className={`block  text-lg ${
+            className={`text-lg ${
               scrolled
                 ? "text-brown xl:block xl:fixed xl:right-5"
                 : "text-white xl:hidden"

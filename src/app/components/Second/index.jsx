@@ -1,11 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 import { PiArrowRightThin } from "react-icons/pi";
 
 const Second = () => {
   return (
     <section className=" bg-white  flex flex-col gap-10">
       <div className="gap-5 flex flex-col text-wrap font-medium p-4">
-        <div className="text-[10vw] xl:text-[8vw] leading-[8vw] w-[250px] md:w-[500px] xl:w-[1500px]">
+        <div className="text-[10vw] xl:text-[8vw] leading-[8vw] w-[250px] md:w-[500px] xl:w-[1000px]">
           <h1 className="uppercase">A WORLD AWAY FROM ORDINARY</h1>
         </div>
         <p className="xl:w-[500px] text-md font-semibold xl:text-lg">
@@ -15,10 +16,13 @@ const Second = () => {
         </p>
       </div>
       <div className="flex justify-between items-start flex-col md:flex-row gap-10 p-5">
-        <button className="2xl:text-2xl border-0 border-brown uppercase border-b-[1px] flex gap-2 items-center font-semibold gap-[40px] ">
+        <Link
+          href="/availability"
+          className="cursor-pointer 2xl:text-2xl border-0 border-brown uppercase border-b-[1px] flex gap-2 items-center font-semibold gap-[40px] "
+        >
           EXPLORE AVAILABILITY
           <PiArrowRightThin size={20} />
-        </button>
+        </Link>
         <div className="relative w-full h-[220px] md:w-[500px] md:h-[300px] md: 2xl:w-[1200px]  2xl:h-[700px]">
           <Image
             src={"/images/homepage_05.webp"}
@@ -28,8 +32,8 @@ const Second = () => {
           />
         </div>
       </div>
-      <div className="2xl:h-screen md:h-[350px] h-[220px] w-full relative">
-        <Image src={"/images/homepage_04.webp"} fill alt=""/>
+      <div className="xl:h-screen md:h-[350px] h-[220px] w-full relative">
+        <Image src={"/images/homepage_04.webp"} fill alt="" />
       </div>
     </section>
   );
