@@ -2,9 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-    color:#8a6c60;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  h1,
+  span,
+  p,
+  h2,
+  h3,
+  button,
+  a {
+    color: #8a6c60;
+  }
 }

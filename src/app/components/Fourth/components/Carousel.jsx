@@ -3,10 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
 import { PiArrowRightThin } from "react-icons/pi";
-import "swiper/css";
-import "swiper/css/effect-fade";
 import { Autoplay, EffectFade } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/effect-fade";
 
 const Carousel = ({}) => {
   const slides = ["Bedroom", "Bathroom", "Living Rooms", "Kitchen"];
@@ -48,7 +49,6 @@ const Carousel = ({}) => {
         slidesPerView={1}
         effect={"fade"}
         loop={true}
-        slideto
         onSlideChange={(swiper) => setCurrent(swiper.realIndex)}
         autoplay={{
           delay: 2500,

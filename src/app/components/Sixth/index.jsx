@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PiArrowRightThin } from "react-icons/pi";
+import Carousel from "./components/Carousel";
 
 const Sixth = () => {
   return (
@@ -24,12 +25,12 @@ const Sixth = () => {
           <PiArrowRightThin size={20} />
         </Link>
       </div>
+      <Carousel/>
       <div className="2xl:h-screen md:h-[500px] h-[220px] w-full relative">
         <Image
-          src={"/images/homepage_02.webp"}
+          src={"/images/homepage_03.webp"}
           fill
           alt=""
-          className="object-cover"
         />
       </div>
     </section>
