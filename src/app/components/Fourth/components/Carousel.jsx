@@ -21,7 +21,7 @@ const Carousel = ({}) => {
 
   return (
     <div className="flex flex-col-reverse xl:flex-row justify-center w-full ">
-      <div className="flex flex-col   ">
+      <div className="flex flex-col">
         <Link
           href="/residences"
           className="absolute top-0 xl:static cursor-pointer 2xl:text-2xl border-0 border-brown uppercase border-b-[1px] flex gap-2 items-center font-semibold gap-[40px] text-nowrap"
@@ -30,7 +30,7 @@ const Carousel = ({}) => {
           <PiArrowRightThin size={20} />
         </Link>
 
-        <div className="flex xl:flex-col gap-1 md:text-xl font-semibold xl:absolute bottom-10 justify-center self-center">
+        <div className="flex xl:flex-col gap-1 md:text-xl font-semibold xl:absolute bottom-10 justify-center self-center xl:self-start">
           {slides.map((slide, index) => (
             <span
               className={`capitalize ${
