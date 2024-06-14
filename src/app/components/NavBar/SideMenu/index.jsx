@@ -1,6 +1,8 @@
 import { motion, useAnimationControls } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+import Button from "../../Button";
 
 const options = [
   "homepage",
@@ -11,29 +13,6 @@ const options = [
   "neighborhood",
   "gallery",
   "team",
-];
-
-const variants = [
-  {
-    hover_0: { scaleX: 1, transformOrigin: "left" },
-    initial_0: { scaleX: 0 },
-    exit_0: { scaleX: 0, transformOrigin: "right" },
-  },
-  {
-    hover_1: { scaleX: 1, transformOrigin: "left" },
-    initial_1: { scaleX: 0 },
-    exit_1: { scaleX: 0, transformOrigin: "right" },
-  },
-  {
-    hover_2: { scaleX: 1, transformOrigin: "left" },
-    initial_2: { scaleX: 0 },
-    exit_2: { scaleX: 0, transformOrigin: "right" },
-  },
-  {
-    hover_3: { scaleX: 1, transformOrigin: "left" },
-    initial_3: { scaleX: 0 },
-    exit_3: { scaleX: 0, transformOrigin: "right" },
-  },
 ];
 
 const bottomOptions = ["Email", "Phone", "Instagram", "Press"];
@@ -50,6 +29,10 @@ const SideMenu = ({ closeMenu }) => {
     controller.start(`exit_${index}`);
   };
 
+  useEffect(() => {
+    console.log(isHovering);
+  }, [isHovering]);
+
   return (
     <motion.aside
       initial={{ scaleX: 0 }}
@@ -60,7 +43,7 @@ const SideMenu = ({ closeMenu }) => {
     >
       <div className=" flex xl:w-fit justify-between xl:flex-col ">
         <motion.button
-        exit={{ opacity: 0,transition:{duration:0.2} }}
+          exit={{ opacity: 0, transition: { duration: 0.2 } }}
           className="xl:block text-white cursor-pointer active:scale-105 transition duration-300 hover:scale-105 duration-300 transition "
           onClick={closeMenu}
         >
@@ -76,36 +59,42 @@ const SideMenu = ({ closeMenu }) => {
       <div className="flex flex-col w-fit justify-between flex-1">
         <ul className="text-4xl xl:text-5xl">
           {options.map((item, index) => (
-            <div className="overflow-hidden h-fit" key={item}>
+            <div className="overflow-hidden h-fit cursor-pointer" key={item}>
               <motion.li
-                className={`text-white uppercase w-fit  ${
-                  isHovering != null && isHovering != item && "text-[#cacaca]"
-                } transition duration-300  `}
                 initial={{ y: "150%" }}
                 animate={{ y: 0, rotateX: 0 }}
                 exit={{
                   y: "150%",
-                  x:"500%",
+                  x: "500%",
                   transition: { duration: 0.1, delay: 0.1 + index * 0.02 },
                 }}
                 transition={{ duration: 0.5 + index * 0.1, ease: "easeInOut" }}
                 onMouseEnter={() => setIsHovering(item)}
                 onMouseOut={() => setIsHovering(null)}
               >
-                {item}
+                <a
+                  href={`/${
+                    item.toLowerCase() === "homepage" ? "" : item.toLowerCase()
+                  }`}
+                  className={` uppercase w-fit  ${
+                    isHovering != null && isHovering != item ? "text-[#cacaca]" : "text-white"
+                  } transition duration-300  `}
+                >
+                  {item}
+                </a>
               </motion.li>
             </div>
           ))}
           <div className="overflow-hidden h-fit my-10">
             <motion.li
-              className={`text-white uppercase w-fit  ${
+              className={`text-white uppercase w-fit   ${
                 isHovering != null &&
                 isHovering != "availability" &&
                 "text-[#cacaca]"
               } transition duration-300  `}
               initial={{ y: "150%" }}
               animate={{ y: 0, rotateX: 0 }}
-              exit={{ y: "150%",x:"500%", transition: { duration: 0.1 } }}
+              exit={{ y: "150%", x: "500%", transition: { duration: 0.1 } }}
               transition={{
                 duration: 0.7 + options.length * 0.1,
                 ease: "easeInOut",
@@ -119,26 +108,27 @@ const SideMenu = ({ closeMenu }) => {
         </ul>
         <ul className="flex gap-5 w-full border-b-white">
           {bottomOptions.map((item, index) => (
-            <div className="overflow-x-hidden w-fit" key={item}>
-              <motion.li
-                initial={{ x: "-100%", opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: "-100%", opacity: 0, transition: { duration: 0.1 } }}
-                transition={{ duration: 0.7 + index * 0.05,delay:0.7+index*0.1 }}
-                className="text-white relative"
-                onMouseEnter={() => handleHover(index)}
-                onMouseLeave={() => handleRemoveHover(index)}
-              >
-                {item}
-                <motion.div
-                  variants={variants[index]}
-                  initial={"initial_" + index}
-                  animate={controller}
-                  exit={"remove_" + index}
-                  transition={{ duration: 0.5 }}
-                  className="absolute left-0 bottom-0 w-full bg-white h-[1px] "
-                ></motion.div>
-              </motion.li>
+            <div className="overflow-x-hidden " key={item}>
+              <Button>
+                <motion.li
+                  initial={{ x: "-100%", opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{
+                    x: "-100%",
+                    opacity: 0,
+                    transition: { duration: 0.1 },
+                  }}
+                  transition={{
+                    duration: 0.7 + index * 0.05,
+                    delay: 0.7 + index * 0.1,
+                  }}
+                  className="text-white relative "
+                  onMouseEnter={() => handleHover(index)}
+                  onMouseLeave={() => handleRemoveHover(index)}
+                >
+                  {item}
+                </motion.li>
+              </Button>
             </div>
           ))}
         </ul>

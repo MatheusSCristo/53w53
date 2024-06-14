@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Initial = () => {
   return (
-    <section className="h-[100vh] relative ">
+    <section className="h-[100vh] relative" id="home">
       <video
         autoPlay
         muted

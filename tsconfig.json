@@ -27,7 +27,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/app/components/NavBar/SideMenu/index.jsx", "src/app/components/Initial/index.jsx", "src/app/components/Fourth/index.jsx", "src/app/components/Third/index.jsx"  ],
+, "src/app/components/NavBar/SideMenu/index.jsx", "src/app/components/Initial/index.jsx", "src/app/components/Fourth/index.jsx", "src/app/(pages)/components/Third/index.jsx"  ],
   "exclude": [
     "node_modules"
   ]
