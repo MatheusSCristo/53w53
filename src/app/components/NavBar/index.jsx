@@ -8,6 +8,7 @@ import {
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import Button from "../Button";
 import SideMenu from "./SideMenu";
 
 const leftOptions = ["design", "residences", "penthouse", "amenities"];
@@ -57,7 +58,7 @@ const NavBar = () => {
         className={`z-10 fixed top-0 w-full flex justify-between items-center  p-4 font-semibold ${bgColor} transition duration-800 h-[80px] ${
           menuIsOpen && "md:w-full w-fit md:left-0 right-0 md:z-0 z-30 "
         } `}
-      > 
+      >
         {!menuIsOpen && (
           <motion.button
             initial={{ opacity: 0 }}
@@ -81,15 +82,17 @@ const NavBar = () => {
             className="capitalize gap-5 hidden xl:flex "
           >
             {leftOptions.map((item) => (
-              <Link
-                href={item}
-                key={item}
-                className={`${
-                  path.split("/")[1] == item && "underline"
-                } underline-offset-8 text-white text-xl`}
-              >
-                {item}
-              </Link>
+              <Button>
+                <Link
+                  href={item}
+                  key={item}
+                  className={`${
+                    path.split("/")[1] == item && "underline"
+                  } underline-offset-8 text-white text-xl`}
+                >
+                  {item}
+                </Link>
+              </Button>
             ))}
           </motion.ul>
         )}
@@ -130,15 +133,17 @@ const NavBar = () => {
             className="capitalize gap-5 hidden xl:flex"
           >
             {rightOptions.map((item) => (
-              <Link
-                href={item}
-                key={item}
-                className={`${
-                  path.split("/")[1] == item && "underline"
-                } underline-offset-8 text-white text-xl`}
-              >
-                {item}
-              </Link>
+              <Button>
+                <Link
+                  href={item}
+                  key={item}
+                  className={`${
+                    path.split("/")[1] == item && "underline"
+                  } underline-offset-8 text-white text-xl`}
+                >
+                  {item}
+                </Link>
+              </Button>
             ))}
           </motion.ul>
         )}
@@ -150,7 +155,12 @@ const NavBar = () => {
             menuIsOpen && "absolute right-5"
           } z-10 `}
         >
-          <Link href={"/inquire"} className={`${scrolled ? "text-brown" : "text-white"}`}>Inquire</Link>
+          <Link
+            href={"/inquire"}
+            className={`${scrolled ? "text-brown" : "text-white"}`}
+          >
+            Inquire
+          </Link>
         </motion.div>
       </motion.nav>
       <AnimatePresence>
