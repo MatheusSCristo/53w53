@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PiArrowRightThin } from "react-icons/pi";
+import Button from "../../../components/Button";
 
 const Seventh = () => {
   return (
@@ -17,14 +18,16 @@ const Seventh = () => {
         </p>
       </div>
       <div className="flex justify-between items-start flex-col md:flex-row gap-10 p-5">
-      <div className="flex flex-col gap-[5rem]">
-          <Link
-            href="/neighborhood"
-            className="cursor-pointer 2xl:text-2xl border-0 border-brown uppercase border-b-[1px] flex gap-2 items-center font-semibold gap-[40px] text-nowrap"
-          >
-            DISCOVER THE NEIGHBORHOOD
-            <PiArrowRightThin size={20} />
-          </Link>
+        <div className="flex flex-col gap-[5rem]">
+          <Button>
+            <Link
+              href="/neighborhood"
+              className="cursor-pointer 2xl:text-2xl border-0 border-brown uppercase border-b-[1px] flex gap-2 items-center font-semibold gap-[40px] text-nowrap"
+            >
+              DISCOVER THE NEIGHBORHOOD
+              <PiArrowRightThin size={20} />
+            </Link>
+          </Button>
           <div className="relative hidden md:block md:w-[200px] md:h-[300px] xl:w-[300px] xl:h-[500px] 2xl:w-[400px] 2xl:h-[600px]">
             <Image
               src={"/images/homepage_09.webp"}

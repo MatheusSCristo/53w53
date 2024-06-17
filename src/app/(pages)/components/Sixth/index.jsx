@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PiArrowRightThin } from "react-icons/pi";
+import Button from "../../../components/Button";
 import Carousel from "./components/Carousel";
 
 const Sixth = () => {
@@ -17,21 +18,19 @@ const Sixth = () => {
         </p>
       </div>
       <div className="flex justify-between items-start flex-col md:flex-row gap-10 p-4">
-        <Link
-          href="/lifestyle"
-          className="cursor-pointer 2xl:text-2xl border-0 border-brown uppercase border-b-[1px] flex gap-2 items-center font-semibold gap-[40px]"
-        >
-          Discover The Lifestyle
-          <PiArrowRightThin size={20} />
-        </Link>
+        <Button>
+          <Link
+            href="/lifestyle"
+            className="cursor-pointer 2xl:text-2xl border-0 border-brown uppercase border-b-[1px] flex gap-2 items-center font-semibold gap-[40px]"
+          >
+            Discover The Lifestyle
+            <PiArrowRightThin size={20} />
+          </Link>
+        </Button>
       </div>
-      <Carousel/>
+      <Carousel />
       <div className="2xl:h-screen md:h-[500px] h-[220px] w-full relative">
-        <Image
-          src={"/images/homepage_03.webp"}
-          fill
-          alt=""
-        />
+        <Image src={"/images/homepage_03.webp"} fill alt="" />
       </div>
     </section>
   );

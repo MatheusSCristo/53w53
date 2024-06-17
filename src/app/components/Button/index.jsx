@@ -1,3 +1,4 @@
+"use client"
 import { motion, useAnimationControls } from "framer-motion";
 
 const variants = {
@@ -6,7 +7,7 @@ const variants = {
   exit: { scaleX: 0, transformOrigin: "right" },
 };
 
-const index = ({ children }) => {
+const Button = ({ children }) => {
   const controller = useAnimationControls();
 
   const handleHover = () => {
@@ -37,4 +38,11 @@ const index = ({ children }) => {
   );
 };
 
-export default index;
+export default Button;
+
+
+
+
+
+
+

@@ -1,6 +1,6 @@
 import { motion, useAnimationControls } from "framer-motion";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import Button from "../../Button";
 
@@ -29,9 +29,6 @@ const SideMenu = ({ closeMenu }) => {
     controller.start(`exit_${index}`);
   };
 
-  useEffect(() => {
-    console.log(isHovering);
-  }, [isHovering]);
 
   return (
     <motion.aside

@@ -72,11 +72,10 @@ const Footer = () => {
         </div>
         <div className="grid grid-rows-3 grid-flow-col gap-2 flex-1">
           {options.map((option) => (
-            <Button >
+            <Button key={option}>
               <Link
                 href={`/${option.toLowerCase()}`}
                 className="text-xl text-white "
-                key={option}
               >
                 {option}
               </Link>

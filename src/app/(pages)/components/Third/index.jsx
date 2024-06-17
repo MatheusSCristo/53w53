@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PiArrowRightThin } from "react-icons/pi";
+import Button from "../../../components/Button";
 
 const Third = () => {
   return (
@@ -21,13 +22,15 @@ const Third = () => {
       </div>
       <div className="flex justify-between items-start flex-col md:flex-row gap-10 p-4">
         <div className="flex flex-col gap-[5rem]">
-          <Link
-            href="/design"
-            className="cursor-pointer 2xl:text-2xl border-0 border-brown uppercase border-b-[1px] flex gap-2 items-center font-semibold gap-[40px]"
-          >
-            DISCOVER THE DESIGN
-            <PiArrowRightThin size={20} />
-          </Link>
+          <Button>
+            <Link
+              href="/design"
+              className="cursor-pointer 2xl:text-2xl border-0 border-brown uppercase border-b-[1px] flex gap-2 items-center font-semibold gap-[40px]"
+            >
+              DISCOVER THE DESIGN
+              <PiArrowRightThin size={20} />
+            </Link>
+          </Button>
           <div className="relative hidden md:block md:w-[200px] md:h-[300px] xl:w-[300px] xl:h-[500px] 2xl:w-[500px] 2xl:h-[700px]">
             <Image
               src={"/images/homepage_07.webp"}
