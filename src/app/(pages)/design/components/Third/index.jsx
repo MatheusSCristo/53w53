@@ -2,15 +2,15 @@ import Image from "next/image";
 import Carousel from "../Carousel/Carousel";
 
 const images = [
-  { number: 5, text: "National Museum", country: "Doha Qatar" },
+  { number: "05", text: "National Museum", country: "Doha Qatar" },
   {
-    number: 7,
+    number: "07",
     text: "Louvre Abu Dhabi  Abu Dhabi",
     country: " United Arab Emirates",
   },
-  { number: 8, text: "Philharmonie de Paris", country: "Paris France" },
+  { number: "08", text: "Philharmonie de Paris", country: "Paris France" },
   {
-    number: 9,
+    number: "09",
     text: "Cartier Foundation for Contemporary Art",
     country: "Paris, France",
   },
@@ -32,7 +32,7 @@ const Third = () => {
             includes international cultural landmarks as well as luxury hotels
             and residences.
           </p>
-          <div className="relative w-full h-[400px] md:h-[400px] md:w-[400px] 2xl:h-[500px] 2xl:w-[500px] mt-2 ">
+          <div className="relative w-full h-[400px] md:h-[400px] 2xl:h-[500px] mt-2 ">
             <Image
               src={"/images/design/design_04.avif"}
               fill
@@ -52,7 +52,7 @@ const Third = () => {
             <div className="flex gap-5" key={item.text}>
               <div className="relative w-full h-[500px] md:w-[500px] md:h-[600px] xl:h-[800px] 2xl:h-[1000px] 2xl:w-[800px]  ">
                 <Image
-                  src={`/images/design/design_0${item.number}.avif`}
+                  src={`/images/design/design_${item.number}.avif`}
                   fill
                   alt=""
                   className="object-cover"

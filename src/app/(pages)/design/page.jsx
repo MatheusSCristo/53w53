@@ -1,3 +1,4 @@
+import Fifth from './components/Fifth'
 import Fourth from './components/Fourth'
 import Initial from './components/Initial'
 import Second from './components/Second'
@@ -10,6 +11,7 @@ const Design = () => {
     <Second/>
     <Third/>
     <Fourth/>
+    <Fifth/>
     </>
   )
 }

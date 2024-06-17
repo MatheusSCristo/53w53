@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const Initial = () => {
   return (
-    <section className='w-screen h-screen relative'>
+    <section className=' h-screen relative'>
         <Image src="/images/design/design_01.avif" alt="placeholder" fill className='object-cover' />
         <div className="uppercase text-[10vw] xl:text-[8vw] leading-[8vw] text-white  absolute bottom-5 left-5 font-semibold ">
         <div className="overflow-hidden ">

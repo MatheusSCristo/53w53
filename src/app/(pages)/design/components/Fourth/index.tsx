@@ -23,7 +23,7 @@ const Fourth = () => {
         <h1 className="uppercase">INTERIORS CRAFTED BY THIERRY DESPONT</h1>
       </div>
       <div className="p-4 w-full flex flex-col xl:flex-row-reverse justify-between relative ">
-        <div className="flex flex-col xl:sticky top-[20%] xl:h-screen md:w-[400px] pb-5">
+        <div className="flex flex-col xl:sticky top-[20%] xl:h-screen md:w-[400px] pb-5 ">
           <p className="text-md font-semibold w-[400px]">
             Thierry Despont (1948–2023) was ​​known for his iconic work on the
             Ritz Paris and Claridge’s Hotel in London and widely regarded as the
@@ -32,7 +32,7 @@ const Fourth = () => {
             Despont earned a reputation for polished, exactingly detailed
             interiors that convey a feeling of contemporary elegance.
           </p>
-          <div className="relative w-full h-[400px] md:h-[400px] md:w-[400px] 2xl:h-[500px] 2xl:w-[500px] mt-2 ">
+          <div className="relative w-full h-[400px] md:h-[400px] 2xl:h-[500px] mt-2 ">
             <Image
               src={"/images/design/design_14.avif"}
               fill

@@ -148,9 +148,9 @@ const NavBar = () => {
           transition={{ times: [0, 0.95, 1], duration: 1.5 }}
           className={`underline-offset-4 underline text-lg xl:hidden ${
             menuIsOpen && "absolute right-5"
-          } z-10 ${scrolled ? "text-brown" : "text-white"}`}
+          } z-10 `}
         >
-          <Link href={"/inquire"}>Inquire</Link>
+          <Link href={"/inquire"} className={`${scrolled ? "text-brown" : "text-white"}`}>Inquire</Link>
         </motion.div>
       </motion.nav>
       <AnimatePresence>
