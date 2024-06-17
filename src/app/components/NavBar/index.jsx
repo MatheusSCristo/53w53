@@ -82,13 +82,12 @@ const NavBar = () => {
             className="capitalize gap-5 hidden xl:flex "
           >
             {leftOptions.map((item) => (
-              <Button>
+              <Button key={item}>
                 <Link
                   href={item}
-                  key={item}
                   className={`${
                     path.split("/")[1] == item && "underline"
-                  } underline-offset-8 text-white text-xl`}
+                  } underline-offset-8 text-white text-md`}
                 >
                   {item}
                 </Link>
@@ -119,7 +118,7 @@ const NavBar = () => {
               href={"/"}
               className={`${
                 scrolled ? "text-brown" : "text-white"
-              } text-2xl xl:text-3xl 2xl:text-4xl text-nowrap`}
+              } text-2xl xl:text-3xl 2xl:text-4xl text-nowrap font-light`}
             >
               53 WEST 53
             </Link>
@@ -133,13 +132,12 @@ const NavBar = () => {
             className="capitalize gap-5 hidden xl:flex"
           >
             {rightOptions.map((item) => (
-              <Button>
+              <Button key={item}>
                 <Link
                   href={item}
-                  key={item}
                   className={`${
                     path.split("/")[1] == item && "underline"
-                  } underline-offset-8 text-white text-xl`}
+                  } underline-offset-8 text-white text-md`}
                 >
                   {item}
                 </Link>
