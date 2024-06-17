@@ -8,9 +8,9 @@ const Second = () => {
     <section>
       <div className="gap-5 flex flex-col xl:flex-row gap-5 text-wrap font-medium p-5">
         <div className="flex flex-col gap-5">
-          <div className="text-[10vw] xl:text-[8vw] leading-[8vw] ">
-            <h1 className="uppercase">ELEGANT INTERIORS</h1>
-          </div>
+          <h1 className="uppercase text-[10vw] xl:text-[8vw] leading-[8vw]">
+            ELEGANT INTERIORS
+          </h1>
           <p className="xl:w-[500px] text-md font-semibold ">
             53 West 53 embodies the ultimate marriage of refinement and comfort,
             extravagance and ease, boldness and elegance. Each of the tower’s
@@ -26,7 +26,7 @@ const Second = () => {
                   href="/availability"
                   className="cursor-pointer 2xl:text-2xl border-0 border-brown uppercase border-b-[1px] flex gap-2 items-center font-semibold gap-[40px]"
                 >
-                    EXPLORE AVAILABILITY
+                  EXPLORE AVAILABILITY
                   <PiArrowRightThin size={20} />
                 </Link>
               </Button>
