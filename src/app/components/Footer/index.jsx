@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { Link as ScrollLink } from "react-scroll";
+import { animateScroll as scroll } from "react-scroll";
 import Button from "../Button";
 
 const options = [
@@ -17,9 +17,13 @@ const options = [
 ];
 
 const Footer = () => {
+  const handleScrollToTop = () => {
+    scroll.scrollToTop();
+  };
+
   return (
     <footer className="bg-brown  flex flex-col text-white px-4">
-      <div className="flex py-10  relative">
+      <div className="flex py-10 flex-col gap-10 xl:flex-row relative">
         <div className="w-1/2">
           <Link
             className="text-white w-[200px] inline-block text-xl font-semibold uppercase"
@@ -44,7 +48,7 @@ const Footer = () => {
         </div>
       </div>
       <hr className=" border-[#ffffff33] bg-[#ffffff33] mx-4" />
-      <div className="flex py-10  relative ">
+      <div className=" py-10 relative hidden xl:flex ">
         <div className="w-1/2">
           <div className="flex flex-col gap-20">
             <h3 className="text-white">PRESS</h3>
@@ -66,7 +70,7 @@ const Footer = () => {
         </div>
       </div>
       <hr className=" border-[#ffffff33] bg-[#ffffff33] mx-4" />
-      <div className="flex py-10  relative ">
+      <div className="hidden xl:flex py-10 relative ">
         <div className="w-1/2">
           <h3 className="text-white font-bold text-xl">INFO</h3>
         </div>
@@ -83,49 +87,44 @@ const Footer = () => {
           ))}
         </div>
       </div>
-      <div className="flex flex-col items-center gap-2 py-5">
-        <div className="w-full h-[200px] relative">
+      <div className=" flex flex-col items-center gap-2 py-5 justify-center">
+        <div className="w-full h-[100px] xl:h-[200px] relative">
           <Image src={"/images/logo.svg"} fill alt="Logo" />
         </div>
-        <div className="flex justify-between w-full">
-          <div className="flex gap-2 text-lg">
+        <div className="flex flex-col xl:flex-row justify-between w-full items-center">
+          <div className="flex gap-2 xl:text-lg">
             <span className="text-white">Copyright © 53west53</span>
-            <span className="text-white">/</span>
+            <span className="text-white hidden xl:block">/</span>
             <Button>
-              <button className="text-white bg-transparent border-0">
+              <button className="text-white bg-transparent border-0 hidden xl:block">
                 Legal notice
               </button>
             </Button>
           </div>
           <Button>
-            <ScrollLink
-              activeClass="active"
-              to="home"
-              spy={true}
-              smooth={true}
-              offset={50}
-              duration={1500}
+            <button
+              onClick={handleScrollToTop}
               className="text-white bg-transparent border-0 cursor-pointer"
             >
               Back to top
-            </ScrollLink>
+            </button>
           </Button>
-          <div className="flex gap-2 text-lg">
+          <div className="flex flex-col xl:gap-2 text-lg justify-center items-center">
             <Button>
               <Link
                 href="https://dos.ny.gov/system/files/documents/2021/08/fairhousingnotice.pdf"
-                className="text-white"
+                className="text-white text-[1rem]"
               >
                 Fair Housing Notice
               </Link>
             </Button>
-            <span className="text-white">/</span>
+            <span className="text-white hidden xl:block">/</span>
             <Button>
               <Link
                 href={
                   "https://static-ind-elliman-production.gtsstatic.net/resources/v_4_19_0_454/siteresources/commonresources/pdf/standard%20operating%20procedures.pdf"
                 }
-                className="text-white bg-transparent border-0"
+                className="text-white text-[1rem]"
               >
                 Standart Operating Procedures
               </Link>
