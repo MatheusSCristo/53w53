@@ -17,7 +17,7 @@ const Carousel = ({ images }) => {
   };
 
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-5 xl:hidden ">
       <Swiper
         spaceBetween={10}
         slidesPerView={"auto"}
@@ -29,7 +29,7 @@ const Carousel = ({ images }) => {
           <SwiperSlide className={`p-2 !w-[80%] `} key={item.text}>
             <div className="relative w-full h-[400px] ">
               <Image
-                src={`/images/design/design_0${item.number}.avif`}
+                src={`/images/design/design_${item.number}.avif`}
                 fill
                 alt=""
                 className="object-cover"
