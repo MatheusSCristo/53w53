@@ -7,9 +7,9 @@ const Second = () => {
   return (
     <section className="">
       <div className="gap-5 flex flex-col text-wrap font-medium p-5">
-        <div className="text-[10vw] xl:text-[8vw] leading-[8vw] w-[300px] md:w-[600px] xl:w-[900px]">
-          <h1 className="uppercase">VISIONARY DESIGN</h1>
-        </div>
+        <h1 className="text-[10vw] xl:text-[8vw] leading-[8vw] w-[300px] md:w-[600px] xl:w-[900px] uppercase">
+          VISIONARY DESIGN
+        </h1>
         <p className="xl:w-[500px] text-md font-semibold ">
           Designed by Jean Nouvel with custom interiors by Thierry Despont, 53
           West 53 is carved by the alchemy of light and shadow. The building, a

@@ -40,8 +40,7 @@ const NavBar = () => {
         if (height > 1024) handleScrollTitleAnimation();
       } else if (latest <= 300 && scrolled) {
         setScrolled(false);
-        setBgColor("bg-transparent");
-
+        if (!path == "/inquire") setBgColor("bg-transparent");
         if (height > 1024) handleScrollTitleAnimationEnd();
       }
     };
@@ -49,11 +48,14 @@ const NavBar = () => {
     return () => unsubscribe();
   }, [scrolled]);
 
-useEffect(()=>{
-  if(menuIsOpen) setBgColor("bg-transparent");
-  else if(menuIsOpen && !scrolled) setBgColor("bg-white");
-},[menuIsOpen])
+  useEffect(() => {
+    if (menuIsOpen) setBgColor("bg-transparent");
+    else if (menuIsOpen && !scrolled) setBgColor("bg-white");
+  }, [menuIsOpen]);
 
+  useEffect(() => {
+    if (path == "/inquire") setBgColor("!bg-white");
+  }, [path]);
 
   return (
     <>
@@ -62,8 +64,8 @@ useEffect(()=>{
         animate={{ height: "80px" }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className={`z-10 fixed top-0 w-full flex justify-between items-center  p-4 font-semibold ${bgColor} transition duration-800 h-[80px] ${
-          menuIsOpen && "!w-fit  right-0  z-30 "
-        } `}
+          path == "/inquire" && "!text-brown "
+        }${menuIsOpen && "!w-fit  right-0  z-30 "} `}
       >
         {!menuIsOpen && (
           <motion.button
@@ -71,7 +73,7 @@ useEffect(()=>{
             animate={{ opacity: [0, 0, 1] }}
             transition={{ times: [0, 0.95, 1], duration: 1 }}
             onClick={() => setMenuIsOpen(true)}
-            className={`text-lg ${
+            className={`text-lg ${path == "/inquire" && "!text-brown "} ${
               scrolled
                 ? "text-brown xl:block xl:fixed xl:right-5"
                 : "text-white xl:hidden"
@@ -91,7 +93,7 @@ useEffect(()=>{
               <Button key={item}>
                 <Link
                   href={item}
-                  className={`${
+                  className={` ${path == "/inquire" && "!text-brown "} ${
                     path.split("/")[1] == item && "underline"
                   } underline-offset-8 text-white text-md`}
                 >
@@ -124,7 +126,9 @@ useEffect(()=>{
               href={"/"}
               className={`${
                 scrolled ? "text-brown" : "text-white"
-              } text-2xl xl:text-3xl 2xl:text-4xl text-nowrap font-light`}
+              } text-2xl xl:text-3xl 2xl:text-4xl text-nowrap font-light ${
+                path == "/inquire" && "!text-brown "
+              }`}
             >
               53 WEST 53
             </Link>
@@ -143,7 +147,9 @@ useEffect(()=>{
                   href={item}
                   className={`${
                     path.split("/")[1] == item && "underline"
-                  } underline-offset-8 text-white text-md`}
+                  } underline-offset-8 text-white text-md ${
+                    path == "/inquire" && "!text-brown "
+                  }`}
                 >
                   {item}
                 </Link>
@@ -161,7 +167,9 @@ useEffect(()=>{
         >
           <Link
             href={"/inquire"}
-            className={`${scrolled ? "text-brown" : "text-white"}`}
+            className={`${scrolled ? "text-brown" : "text-white"} ${
+              path == "/inquire" && "!text-brown "
+            }`}
           >
             Inquire
           </Link>
