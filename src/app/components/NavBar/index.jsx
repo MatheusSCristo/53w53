@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 import Button from "../Button";
 import SideMenu from "./SideMenu";
 
-const leftOptions = ["design", "residences", "penthouse", "amenities"];
+const leftOptions = ["design", "residences", "penthouses", "amenities"];
 const rightOptions = ["neighborhood", "gallery", "availability", "inquire"];
 
 const NavBar = () => {
