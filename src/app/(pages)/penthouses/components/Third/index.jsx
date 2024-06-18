@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Section from "../../../../components/Section";
 
 const section = {
@@ -13,8 +14,13 @@ const section = {
 
 const Third = () => {
   return (
-    <section>
-      <Section section={section} />
+    <section className="flex flex-col gap-10 my-5 justify-center items-center ">
+      <div className="xl:ml-[20%] xl:pr-5 p-2 w-fit">
+        <Section section={section} />
+      </div>
+      <div className="w-full h-[200px] md:h-[400px] xl:h-[800px] relative">
+        <Image src={"/images/penthouse/penthouse_02.avif"} fill alt="" className="object-cover" />
+      </div>
     </section>
   );
 };

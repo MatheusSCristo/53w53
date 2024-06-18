@@ -8,7 +8,7 @@ const options = [
   "homepage",
   "design",
   "residences",
-  "penthouse",
+  "penthouses",
   "amenities",
   "neighborhood",
   "gallery",
