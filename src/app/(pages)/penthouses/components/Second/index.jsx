@@ -18,17 +18,15 @@ const Second = () => {
             scale lend a modern feeling that balances intimacy and grandeur.
           </p>
           <div className="flex justify-between items-start flex-col md:flex-row gap-10 ">
-            <div className="flex flex-col gap-[5rem]">
-              <Button>
-                <Link
-                  href="/inquire"
-                  className="cursor-pointer 2xl:text-2xl border-0 border-brown uppercase border-b-[1px] flex gap-2 items-center font-semibold gap-[40px]"
-                >
-                  INQUIRE ABOUT PREMIUM RESIDENCES
-                  <PiArrowRightThin size={20} />
-                </Link>
-              </Button>
-            </div>
+            <Button>
+              <Link
+                href="/inquire"
+                className="cursor-pointer 2xl:text-2xl border-0 border-brown uppercase border-b-[1px] flex gap-2 items-center font-semibold gap-[40px]"
+              >
+                INQUIRE ABOUT PREMIUM RESIDENCES
+                <PiArrowRightThin size={20} />
+              </Link>
+            </Button>
           </div>
         </div>
         <div className="relative w-full h-[500px] md:w-1/2 md:h-[600px] xl:h-[1000px]  2xl:h-[1300px]">
