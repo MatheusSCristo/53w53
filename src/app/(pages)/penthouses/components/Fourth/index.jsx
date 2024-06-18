@@ -12,7 +12,7 @@ const Fourth = () => {
         </h1>
         <Button>
           <Link
-            href="/inquire"
+            href="/gallery"
             className="cursor-pointer 2xl:text-2xl border-0 border-brown uppercase border-b-[1px] flex gap-2 items-center font-semibold gap-[40px]"
           >
             SEE THE VIEWS
@@ -22,10 +22,10 @@ const Fourth = () => {
       </div>
       <div className="flex gap-10 flex-col-reverse xl:flex-row mt-5">
         <div className="flex flex-col gap-5 flex-1">
-          <div className="w-full h-[200px] md:h-[400px] xl:h-[600px] relative">
+          <div className="w-full h-[200px] md:h-[400px] xl:h-[800px] relative">
             <Image src={"/images/penthouse/penthouse_05.avif"} alt="" fill />
           </div>
-          <div className="w-full h-[200px] md:h-[300px] xl:h-[500px] relative">
+          <div className="w-full h-[200px] md:h-[400px] xl:h-[800px] relative">
             <video
               autoPlay
               muted
