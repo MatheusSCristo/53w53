@@ -10,6 +10,17 @@ const section = {
     "/images/penthouse/penthouse_07.avif",
     "/images/penthouse/penthouse_08.avif",
   ],
+  features: [
+    "Oversized walnut entry doors with custom Thierry Despont–designed burnished bronze hardware by E.R. Butler and Co",
+    "Wide-plank solid American oak doors and custom wood baseboards",
+    "Select duplex double-height homes",
+    "Triple-glazed, floor-to-ceiling low-iron glass windows that open to fresh air",
+    "All windows fitted with motorized Lutron solar shades; additional blackout shades in bedrooms",
+    "Humidified and filtered fresh air supply system",
+    "Linear diffusers for heating and cooling with individual thermostatic controls for primary rooms",
+    "Private interior elevator (in select residences)",
+    "Limestone-clad gas fireplace (in select residences)",
+  ],
 };
 
 const Third = () => {
@@ -19,7 +30,12 @@ const Third = () => {
         <Section section={section} />
       </div>
       <div className="w-full h-[200px] md:h-[400px] xl:h-[800px] relative">
-        <Image src={"/images/penthouse/penthouse_02.avif"} fill alt="" className="object-cover" />
+        <Image
+          src={"/images/penthouse/penthouse_02.avif"}
+          fill
+          alt=""
+          className="object-cover"
+        />
       </div>
     </section>
   );
