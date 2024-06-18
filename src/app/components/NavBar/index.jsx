@@ -30,6 +30,11 @@ const NavBar = () => {
     controller.start("nav");
   };
 
+  const checkPath=()=>{
+    return path != "/inquire" || path != "/team" || !path != "/availability";
+  }
+
+
   useEffect(() => {
     const height = window.innerWidth;
 
@@ -40,7 +45,7 @@ const NavBar = () => {
         if (height > 1024) handleScrollTitleAnimation();
       } else if (latest <= 300 && scrolled) {
         setScrolled(false);
-        if (!path == "/inquire") setBgColor("bg-transparent");
+        if (checkPath()) setBgColor("bg-transparent");
         if (height > 1024) handleScrollTitleAnimationEnd();
       }
     };
@@ -54,7 +59,7 @@ const NavBar = () => {
   }, [menuIsOpen]);
 
   useEffect(() => {
-    if (path == "/inquire") setBgColor("!bg-white");
+    if (checkPath()) setBgColor("!bg-white");
   }, [path]);
 
   return (
@@ -64,7 +69,7 @@ const NavBar = () => {
         animate={{ height: "80px" }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className={`z-10 fixed top-0 w-full flex justify-between items-center  p-4 font-semibold ${bgColor} transition duration-800 h-[80px] ${
-          path == "/inquire" && "!text-brown "
+          checkPath() && "!text-brown "
         }${menuIsOpen && "!w-fit  right-0  z-30 "} `}
       >
         {!menuIsOpen && (
@@ -73,7 +78,7 @@ const NavBar = () => {
             animate={{ opacity: [0, 0, 1] }}
             transition={{ times: [0, 0.95, 1], duration: 1 }}
             onClick={() => setMenuIsOpen(true)}
-            className={`text-lg ${path == "/inquire" && "!text-brown "} ${
+            className={`text-lg ${checkPath() && "!text-brown "} ${
               scrolled
                 ? "text-brown xl:block xl:fixed xl:right-5"
                 : "text-white xl:hidden"
@@ -93,7 +98,7 @@ const NavBar = () => {
               <Button key={item}>
                 <Link
                   href={item}
-                  className={` ${path == "/inquire" && "!text-brown "} ${
+                  className={` ${checkPath() && "!text-brown "} ${
                     path.split("/")[1] == item && "underline"
                   } underline-offset-8 text-white text-md`}
                 >
@@ -127,7 +132,7 @@ const NavBar = () => {
               className={`${
                 scrolled ? "text-brown" : "text-white"
               } text-2xl xl:text-3xl 2xl:text-4xl text-nowrap font-light ${
-                path == "/inquire" && "!text-brown "
+                checkPath() && "!text-brown "
               }`}
             >
               53 WEST 53
@@ -148,7 +153,7 @@ const NavBar = () => {
                   className={`${
                     path.split("/")[1] == item && "underline"
                   } underline-offset-8 text-white text-md ${
-                    path == "/inquire" && "!text-brown "
+                    checkPath() && "!text-brown "
                   }`}
                 >
                   {item}
@@ -168,7 +173,7 @@ const NavBar = () => {
           <Link
             href={"/inquire"}
             className={`${scrolled ? "text-brown" : "text-white"} ${
-              path == "/inquire" && "!text-brown "
+              checkPath() && "!text-brown "
             }`}
           >
             Inquire
