@@ -49,6 +49,12 @@ const NavBar = () => {
     return () => unsubscribe();
   }, [scrolled]);
 
+useEffect(()=>{
+  if(menuIsOpen) setBgColor("bg-transparent");
+  else if(menuIsOpen && !scrolled) setBgColor("bg-white");
+},[menuIsOpen])
+
+
   return (
     <>
       <motion.nav
@@ -56,7 +62,7 @@ const NavBar = () => {
         animate={{ height: "80px" }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className={`z-10 fixed top-0 w-full flex justify-between items-center  p-4 font-semibold ${bgColor} transition duration-800 h-[80px] ${
-          menuIsOpen && "md:w-full w-fit md:left-0 right-0 md:z-0 z-30 "
+          menuIsOpen && "!w-fit  right-0  z-30 "
         } `}
       >
         {!menuIsOpen && (
@@ -69,7 +75,7 @@ const NavBar = () => {
               scrolled
                 ? "text-brown xl:block xl:fixed xl:right-5"
                 : "text-white xl:hidden"
-            }`}
+            } `}
           >
             Menu
           </motion.button>
@@ -150,7 +156,7 @@ const NavBar = () => {
           animate={{ opacity: [0, 0, 1] }}
           transition={{ times: [0, 0.95, 1], duration: 1.5 }}
           className={`underline-offset-4 underline text-lg xl:hidden ${
-            menuIsOpen && "absolute right-5"
+            menuIsOpen && "text-white absolute right-5 "
           } z-10 `}
         >
           <Link
