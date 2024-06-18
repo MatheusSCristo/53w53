@@ -124,9 +124,10 @@ const Third = () => {
               <h1 className="uppercase text-[10vw] xl:text-[8vw] leading-[8vw]">
                 {section.title}
               </h1>
+              {/* SIDE MENU TO DO */}
               <Button>
+                
                 <button
-                  href="/availability"
                   className="cursor-pointer 2xl:text-2xl border-0 border-brown uppercase border-b-[1px] flex gap-2 items-center font-semibold gap-[40px] text-nowrap"
                 >
                   {section.button}
