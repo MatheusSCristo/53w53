@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import Section from "./components/Section";
+import Section from "../../../../components/Section";
 import sections from "./sections";
 
 const SectionButton = ({ section, active }) => {

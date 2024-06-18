@@ -1,8 +1,9 @@
+"use client"
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 import { PiPlus } from "react-icons/pi";
-import Button from "../../../../../../components/Button";
+import Button from "../Button";
 
 const Menu = ({ section, close }) => {
   return (
@@ -99,7 +100,7 @@ const Section = ({ section }) => {
             key={image}
           >
             <Image
-              src={`/images/residences/residences_${image}.avif`}
+              src={image}
               alt=""
               fill
             />
