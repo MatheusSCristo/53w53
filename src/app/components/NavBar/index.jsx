@@ -60,6 +60,7 @@ const NavBar = () => {
 
   useEffect(() => {
     if (checkPath()) setBgColor("!bg-white");
+    else setBgColor("bg-transparent");
   }, [path]);
 
   return (
