@@ -7,9 +7,9 @@ const Second = () => {
   return (
     <section className=" bg-white  flex flex-col gap-10">
       <div className="gap-5 flex flex-col text-wrap font-medium p-4">
-        <div className="text-[10vw] xl:text-[8vw] leading-[8vw] w-[250px] md:w-[500px] xl:w-[1000px]">
-          <h1 className="uppercase">A WORLD AWAY FROM ORDINARY</h1>
-        </div>
+        <h1 className="uppercase text-[10vw] xl:text-[8vw] leading-[8vw] w-[250px] md:w-[500px] xl:w-[1000px]">
+          A WORLD AWAY FROM ORDINARY
+        </h1>
         <p className="xl:w-[500px] text-md font-semibold xl:text-lg">
           A sculptural icon for Manhattan by Jean Nouvel and Thierry Despont.
           Condominium residences with panoramic views, inspired service and
