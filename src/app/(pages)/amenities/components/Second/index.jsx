@@ -54,7 +54,7 @@ const Second = () => {
         </div>
         <div className="flex-col gap-5 w-1/2 hidden xl:flex ">
           {amenities.map((item) => (
-            <div className="flex justify-end w-full gap-2">
+            <div className="flex justify-end w-full gap-2" key={item.name}>
               <span className="font-semibold text-xl mt-5 text-nowrap text-right w-[300px]">
                 {item.name}
               </span>
