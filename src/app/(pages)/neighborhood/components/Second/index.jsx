@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const index = () => {
+const Second = () => {
   return (
     <section >
       <h1 className="uppercase text-[10vw] xl:text-[8vw] leading-[8vw] w-[250px] md:w-[500px] xl:w-[1000px] p-4">
@@ -28,4 +28,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Second;
