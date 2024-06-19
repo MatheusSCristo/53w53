@@ -1,11 +1,13 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import { PiPlus } from "react-icons/pi";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Button from "../../../../components/Button";
 
+import { AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import "swiper/css";
+import Menu from "../../../../components/Menu";
 
 const amenities = [
   {
@@ -26,9 +28,32 @@ const amenities = [
   },
 ];
 
+const section = {
+  title: "Available Servicess",
+  features: [
+    "24-hour concierge, porter service, and doormen",
+    "General Manager and live-in Resident Manager",
+    "Pet walking and grooming",
+    "Technology consultant to assist with computers and international phone set-up",
+    "Floral delivery and care",
+    "Dry cleaning and laundry service/large-load laundry room",
+    "Housekeeping/maid service",
+    "Chauffeur lounge off service entrance",
+    "Bicycle storage",
+    "Four high-speed passenger elevators to residences, some with direct access into homes",
+  ],
+};
+
 const Second = () => {
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+
   return (
     <section>
+      <AnimatePresence>
+        {menuIsOpen && (
+          <Menu section={section} close={() => setMenuIsOpen(false)} />
+        )}
+      </AnimatePresence>
       <h1 className="p-4 uppercase text-[10vw]  leading-[10vw] xl:text-[7vw] xl:leading-[7vw] w-full md:w-[800px] xl:w-[900px]  p-4 font-medium ">
         INSPIRE SERVICE AND AMENITIES
       </h1>
@@ -43,13 +68,13 @@ const Second = () => {
             level of access and refinement to the residential setting.
           </p>
           <Button>
-            <Link
-              href="/penthouses"
+            <button
+              onClick={() => setMenuIsOpen(true)}
               className="cursor-pointer 2xl:text-2xl border-0 border-brown uppercase border-b-[1px] flex gap-2 items-center font-semibold gap-[40px] text-nowrap"
             >
               EXPLORE THE SERVICE OFFERING
               <PiPlus size={20} />
-            </Link>
+            </button>
           </Button>
         </div>
         <div className="flex-col gap-5 w-1/2 hidden xl:flex ">

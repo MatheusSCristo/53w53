@@ -1,9 +1,27 @@
+"use cl"
 import Image from "next/image";
 import Link from "next/link";
 import { PiArrowRightThin } from "react-icons/pi";
 import Button from "../../../../components/Button";
 
+const section = {
+  title: "Available Servicess",
+  features: [
+    "24-hour concierge, porter service, and doormen",
+    "General Manager and live-in Resident Manager",
+    "Pet walking and grooming",
+    "Technology consultant to assist with computers and international phone set-up",
+    "Floral delivery and care",
+    "Dry cleaning and laundry service/large-load laundry room",
+    "Housekeeping/maid service",
+    "Chauffeur lounge off service entrance",
+    "Bicycle storage",
+    "Four high-speed passenger elevators to residences, some with direct access into homes",
+  ],
+};
+
 const Seventh = () => {
+
   return (
     <section>
       <div className="h-[60vh] xl:h-screen flex justify-center items-center flex-col gap-10">
@@ -27,7 +45,7 @@ const Seventh = () => {
           </h1>
           <Button>
             <Link
-              href="/amenities"
+              href="/neighborhood"
               className="cursor-pointer 2xl:text-2xl border-0 border-brown uppercase border-b-[1px] flex gap-2 items-center font-semibold gap-[40px] text-nowrap"
             >
               EXPLORE THE NEIGHBORHOOD

@@ -1,9 +1,11 @@
 "use client";
+import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
+import { useState } from "react";
 import { PiPlus } from "react-icons/pi";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Button from "../../../../components/Button";
+import Menu from "../../../../components/Menu";
 
 const slides = [
   {
@@ -33,9 +35,33 @@ const slides = [
   }
 ];
 
+const section = {
+  title: "LIFESTYLE AMENITIES",
+  features: [
+    "24-hour concierge, porter service, and doormen",
+    "General Manager and live-in Resident Manager",
+    "Pet walking and grooming",
+    "Technology consultant to assist with computers and international phone set-up",
+    "Floral delivery and care",
+    "Dry cleaning and laundry service/large-load laundry room",
+    "Housekeeping/maid service",
+    "Chauffeur lounge off service entrance",
+    "Bicycle storage",
+    "Four high-speed passenger elevators to residences, some with direct access into homes",
+  ],
+};
+
+
 const Fourth = () => {
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+
   return (
     <section className="py-5 flex flex-col gap-5">
+      <AnimatePresence>
+        {menuIsOpen && (
+          <Menu section={section} close={() => setMenuIsOpen(false)} />
+        )}
+      </AnimatePresence>
       <div className="flex justify-between flex-col xl:flex-row">
         <h1 className="p-4 uppercase text-[10vw]  leading-[10vw] xl:text-[7vw] xl:leading-[7vw] w-full md:w-[800px] xl:w-[900px]  p-4 font-medium ">
           AN ELEVATED LIFESTYLE
@@ -50,13 +76,13 @@ const Fourth = () => {
             dining options from the on-premises restaurant, 53.
           </p>
           <Button>
-            <Link
-              href="/penthouses"
+          <button
+              onClick={() => setMenuIsOpen(true)}
               className="cursor-pointer 2xl:text-2xl border-0 border-brown uppercase border-b-[1px] flex gap-2 items-center font-semibold gap-[40px] text-nowrap"
             >
               SEE ALL LIFESTYLE AMENITIES
               <PiPlus size={20} />
-            </Link>
+            </button>
           </Button>
         </div>
       </div>

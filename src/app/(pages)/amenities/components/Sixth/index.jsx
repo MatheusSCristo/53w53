@@ -71,7 +71,7 @@ const Sixth = () => {
           spaceBetween={10}
           slidesPerView={"auto"}
           loop
-          className="mt-5 mb-10 w-full xl:hidden"
+          className="mt-5 mb-10 w-full xl:!hidden"
         >
           {slides.map((slide) => (
             <SwiperSlide className=" !flex flex-col gap-5 !w-[80%] md:!w-[60%] " key={slide.name}>

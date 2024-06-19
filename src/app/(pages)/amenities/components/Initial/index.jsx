@@ -10,6 +10,7 @@ const Initial = () => {
         alt="placeholder"
         fill
         className="object-cover"
+        priority
       />
       <div className="uppercase text-[10vw] xl:text-[8vw] leading-[8vw] text-white  absolute bottom-5 left-5 font-semibold ">
         <div className="overflow-hidden ">
