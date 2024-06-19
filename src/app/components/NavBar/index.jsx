@@ -88,7 +88,7 @@ const NavBar = () => {
             Menu
           </motion.button>
         )}
-        {!scrolled && (
+        {!scrolled && !menuIsOpen && (
           <motion.ul
             initial={{ opacity: 0 }}
             animate={{ opacity: [0, 0, 1] }}
@@ -145,7 +145,7 @@ const NavBar = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: [0, 0, 1] }}
             transition={{ times: [0, 0.95, 1], duration: 1.5 }}
-            className="capitalize gap-5 hidden xl:flex"
+            className={`capitalize gap-5 hidden xl:flex `}
           >
             {rightOptions.map((item) => (
               <Button key={item}>

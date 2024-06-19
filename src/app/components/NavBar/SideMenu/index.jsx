@@ -33,18 +33,20 @@ const SideMenu = ({ closeMenu }) => {
     <motion.aside
       initial={{ scaleX: 0 }}
       animate={{ scaleX: 1 }}
-      exit={{ scaleX: 0, transition: { duration: 1,ease:"easeOut" } }}
+      exit={{ scaleX: 0, transition: { duration: 1, ease: "easeOut" } }}
       transition={{ duration: 0.5 }}
-      className="z-10 origin-right gap-12 bg-brown h-screen w-screen md:w-3/5 xl:w-2/5 fixed right-0 top-0 flex flex-col xl:justify-between xl:flex-row-reverse p-5 flex-1"
+      className="z-30 origin-right gap-12 bg-brown h-screen w-screen md:w-3/5 xl:w-2/5 fixed right-0 top-0 flex flex-col xl:justify-between xl:flex-row-reverse p-5 flex-1"
     >
       <div className="flex xl:w-fit justify-between xl:flex-col 0 w-fit ">
-        <motion.button
-          exit={{ opacity: 0, transition: { duration: 0.2 } }}
-          className="z-40 xl:block text-white cursor-pointer active:scale-105 transition duration-300 hover:scale-105 duration-300 transition "
-          onClick={closeMenu}
-        >
-          Close
-        </motion.button>
+        <Button>
+          <motion.button
+            exit={{ opacity: 0, transition: { duration: 0.2 } }}
+            className="z-40 xl:block text-white cursor-pointer active:scale-105 transition duration-300 hover:scale-105 duration-300 transition "
+            onClick={closeMenu}
+          >
+            Close
+          </motion.button>
+        </Button>
         <Link
           href={"/inquire"}
           className="hidden xl:block underline-offset-4 underline text-white hover:scale-105 duration-300 transition"
@@ -62,7 +64,11 @@ const SideMenu = ({ closeMenu }) => {
                 exit={{
                   y: "150%",
                   x: "500%",
-                  transition: { duration: 0.1, delay: 0.1 + index * 0.05,ease:"easeInOut" },
+                  transition: {
+                    duration: 0.1,
+                    delay: 0.1 + index * 0.05,
+                    ease: "easeInOut",
+                  },
                 }}
                 transition={{ duration: 0.5 + index * 0.1, ease: "easeInOut" }}
                 onMouseEnter={() => setIsHovering(item)}
@@ -114,7 +120,7 @@ const SideMenu = ({ closeMenu }) => {
                   exit={{
                     x: "-100%",
                     opacity: 0,
-                    transition: { duration: 0.1, delay: 0.4 + index * 0.02},
+                    transition: { duration: 0.1, delay: 0.4 + index * 0.02 },
                   }}
                   transition={{
                     duration: 0.7 + index * 0.01,
