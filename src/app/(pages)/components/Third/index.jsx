@@ -7,9 +7,9 @@ const Third = () => {
   return (
     <section>
       <div className="gap-5 flex flex-col text-wrap font-medium p-5">
-        <div className="text-[10vw] xl:text-[8vw] leading-[8vw] w-[250px] md:w-[500px] xl:w-[700px]">
-          <h1 className="uppercase">THE WORLD WE SEEK</h1>
-        </div>
+        <h1 className="uppercase text-[10vw] xl:text-[8vw] leading-[8vw] w-[250px] md:w-[500px] xl:w-[700px]">
+          THE WORLD WE SEEK
+        </h1>
         <p className="xl:w-[500px] text-md font-semibold ">
           53 West 53's distinctive and visionary sculptural form rises above New
           York City's iconic Museum of Modern Art. The tower’s expressive
