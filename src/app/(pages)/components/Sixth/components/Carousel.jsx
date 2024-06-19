@@ -6,7 +6,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import { PiArrowLeftThin, PiArrowRightThin } from "react-icons/pi";
 import "swiper/css";
-import "swiper/css/effect-fade";
 
 const slides = [
   { name: "ON-PREMISE RESTAURANTE,53", size: "md:!w-[70%]" },
