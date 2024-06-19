@@ -45,7 +45,7 @@ const NavBar = () => {
         if (height > 1024) handleScrollTitleAnimation();
       } else if (latest <= 300 && scrolled) {
         setScrolled(false);
-        if (checkPath()) setBgColor("bg-transparent");
+        if (!checkPath()) setBgColor("bg-transparent");
         if (height > 1024) handleScrollTitleAnimationEnd();
       }
     };
