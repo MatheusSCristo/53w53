@@ -63,12 +63,12 @@ const Availability = () => {
         </div>
         <span>SQ.M</span>
       </div>
-      <table class="table-auto min-w-full bg-white ">
-        <thead class="text-xl">
-          <tr class="font-medium text-brown uppercase tracking-wider text-left">
-            <th class="px-6 py-3 w-[500px] ">Residence</th>
+      <table className="table-auto min-w-full bg-white ">
+        <thead className="text-xl">
+          <tr className="font-medium text-brown uppercase tracking-wider text-left">
+            <th className="px-6 py-3 w-[500px] ">Residence</th>
             <th
-              class="px-6 py-3 w-[400px] "
+              className="px-6 py-3 w-[400px] "
               onClick={() =>
                 setBedSort((prevState) => {
                   return prevState === "asc" ? "desc" : "asc";
@@ -83,9 +83,9 @@ const Availability = () => {
                 } duration-300 transition inline-block`}
               />
             </th>
-            <th class="px-6 py-3 w-[400px]">Bath</th>
+            <th className="px-6 py-3 w-[400px]">Bath</th>
             <th
-              class="px-6 py-3 w-[400px] "
+              className="px-6 py-3 w-[400px] "
               onClick={() =>
                 setMetricSort((prevState) => {
                   return prevState === "asc" ? "desc" : "asc";
@@ -101,9 +101,9 @@ const Availability = () => {
               />
             </th>
 
-            <th class="px-6 py-3 w-[400px]">Exposure</th>
+            <th className="px-6 py-3 w-[400px]">Exposure</th>
             <th
-              class="px-6 py-3 w-[400px] "
+              className="px-6 py-3 w-[400px] "
               onClick={() =>
                 setPriceSort((prevState) => {
                   return prevState === "asc" ? "desc" : "asc";
@@ -118,34 +118,34 @@ const Availability = () => {
                 } duration-300 transition inline-block`}
               />
             </th>
-            <th class="px-6 py-3 w-[400px]">Est. Monthly Common Charges</th>
-            <th class="px-6 py-3 w-[400px]">Est. Monthly Real Estate Taxes</th>
-            <th class="px-6 py-3 w-[400px]">Floor Plan</th>
+            <th className="px-6 py-3 w-[400px]">Est. Monthly Common Charges</th>
+            <th className="px-6 py-3 w-[400px]">Est. Monthly Real Estate Taxes</th>
+            <th className="px-6 py-3 w-[400px]">Floor Plan</th>
           </tr>
         </thead>
-        <tbody class="divide-y divide-[#8a6c6033]">
+        <tbody className="divide-y divide-[#8a6c6033]">
           {residences.map((residence) => (
-            <tr className="font-semibold text-brown uppercase tracking-wider text-left">
-              <td class="px-6 py-4 whitespace-nowrap">{residence.unit}</td>
-              <td class="px-6 py-4 whitespace-nowrap">{residence.bed}</td>
-              <td class="px-6 py-4 whitespace-nowrap">{residence.bath}</td>
-              <td class="px-6 py-4 whitespace-nowrap">
+            <tr className="font-semibold text-brown uppercase tracking-wider text-left" key={residence.unit}>
+              <td className="px-6 py-4 whitespace-nowrap">{residence.unit}</td>
+              <td className="px-6 py-4 whitespace-nowrap">{residence.bed}</td>
+              <td className="px-6 py-4 whitespace-nowrap">{residence.bath}</td>
+              <td className="px-6 py-4 whitespace-nowrap">
                 {getMetricValue(residence.sqm)}
               </td>
-              <td class="px-6 py-4 whitespace-nowrap">
+              <td className="px-6 py-4 whitespace-nowrap">
                 {residence.exposure.join(",")}
               </td>
-              <td class="px-6 py-4 whitespace-nowrap">
+              <td className="px-6 py-4 whitespace-nowrap">
                 {"$" + residence.price.toLocaleString()}
               </td>
-              <td class="px-6 py-4 whitespace-nowrap">
+              <td className="px-6 py-4 whitespace-nowrap">
                 {"$" + residence.estMonthlyCommonCharges.toLocaleString()}
               </td>
-              <td class="px-6 py-4 whitespace-nowrap">
+              <td className="px-6 py-4 whitespace-nowrap">
                 {"$" + residence.estMonthlyRealEstateTaxes.toLocaleString()}
               </td>
-              <td class="px-6 py-4 whitespace-nowrap">
-                <Link href={residence.floorPlan} target="_blank">
+              <td className="px-6 py-4 whitespace-nowrap ">
+                <Link href={residence.floorPlan} className="hover:underline" target="_blank">
                   FLOOR PLAN
                 </Link>
               </td>

@@ -31,7 +31,7 @@ const NavBar = () => {
   };
 
   const checkPath=()=>{
-    return path != "/inquire" || path != "/team" || !path != "/availability";
+    return path == "/inquire" || path == "/team" || path == "/availability";
   }
 
 
