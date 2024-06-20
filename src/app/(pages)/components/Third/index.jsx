@@ -11,8 +11,8 @@ const Third = () => {
           THE WORLD WE SEEK
         </h1>
         <p className="xl:w-[500px] text-md font-semibold ">
-          53 West 53's distinctive and visionary sculptural form rises above New
-          York City's iconic Museum of Modern Art. The tower’s expressive
+          53 West 53`s distinctive and visionary sculptural form rises above New
+          York City`s iconic Museum of Modern Art. The tower`s expressive
           architecture is shaped by an original and artistic response to its
           context—including the forces of nature and the vitality of the
           streetscape—and allows the building to achieve expansive interior

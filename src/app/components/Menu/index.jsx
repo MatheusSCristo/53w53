@@ -37,6 +37,7 @@ const Menu = ({ section, close }) => {
         <ul>
           {section.features.map((feature, index) => (
             <motion.div
+            key={feature}
               initial={{ x: "150%" }}
               animate={{ x: 0 }}
               exit={{
