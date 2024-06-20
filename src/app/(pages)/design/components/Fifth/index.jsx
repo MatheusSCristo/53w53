@@ -36,7 +36,7 @@ const Fifth = () => {
           </Button>
         </div>
         <div className="w-full h-[200px] xl:w-1/3 xl:h-[400px] relative">
-          <Image src="/images/design/design_15.avif" fill />
+          <Image src="/images/design/design_15.avif" fill alt=""/>
         </div>
       </div>
     </section>

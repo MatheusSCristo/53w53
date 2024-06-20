@@ -3,7 +3,7 @@ import Image from "next/image";
 const Third = () => {
   return (
     <section>
-      <h1 className="uppercase text-[10vw] xl:text-[8vw] leading-[8vw] w-[350px] md:w-[700px] xl:w-[1000px] p-4">
+      <h1 className="uppercase text-[10vw] xl:text-[8vw] leading-[8vw] w-[350px] md:w-[900px] xl:w-[1200px] p-4">
         SOARING ABOVE MOMA
       </h1>
       <div className="flex flex-col md:flex-row gap-5 justify-between mt-10 p-4  ">

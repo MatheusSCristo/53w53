@@ -21,7 +21,7 @@ const Second = () => {
       <div className="flex justify-between items-start flex-col md:flex-row gap-10 p-4">
         <Button>
           <Link
-            href="/penthouses"
+            href="/inquire"
             className="cursor-pointer 2xl:text-2xl border-0 border-brown uppercase border-b-[1px] flex gap-2 items-center font-semibold gap-[40px] text-nowrap"
           >
             INQUIRE

@@ -40,12 +40,12 @@ const NavBar = () => {
 
     const handleChange = (latest) => {
       if (latest > 300 && !scrolled) {
-        setBgColor("bg-white");
+        setBgColor("!bg-white");
         setScrolled(true);
         if (height > 1024) handleScrollTitleAnimation();
       } else if (latest <= 300 && scrolled) {
         setScrolled(false);
-        if (!checkPath()) setBgColor("bg-transparent");
+        if (!checkPath()) setBgColor("!bg-transparent");
         if (height > 1024) handleScrollTitleAnimationEnd();
       }
     };
@@ -60,14 +60,14 @@ const NavBar = () => {
 
   useEffect(() => {
     if (checkPath()) setBgColor("!bg-white");
-    else setBgColor("bg-transparent");
+    else setBgColor("!bg-transparent");
   }, [path]);
 
   return (
     <>
       <motion.nav
-        initial={{ height: "100vh" }}
-        animate={{ height: "80px" }}
+        initial={{ height: "100vh",backgroundColor:checkPath()?"white":"transparent" }}
+        animate={{ height: "80px"}}
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className={`z-10 fixed top-0 w-full flex justify-between items-center  p-4 font-semibold ${bgColor} transition duration-800 h-[80px] ${
           checkPath() && "!text-brown "

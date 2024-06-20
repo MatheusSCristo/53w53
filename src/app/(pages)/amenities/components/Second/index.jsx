@@ -54,7 +54,7 @@ const Second = () => {
           <Menu section={section} close={() => setMenuIsOpen(false)} />
         )}
       </AnimatePresence>
-      <h1 className="p-4 uppercase text-[10vw]  leading-[10vw] xl:text-[7vw] xl:leading-[7vw] w-full md:w-[800px] xl:w-[900px]  p-4 font-medium ">
+      <h1 className="p-4 uppercase text-[10vw]  leading-[10vw] xl:text-[7vw] xl:leading-[7vw] w-full md:w-[1000px] xl:w-[1200px]  p-4 font-medium ">
         INSPIRE SERVICE AND AMENITIES
       </h1>
       <div className="p-4 flex flex-col xl:flex-row justify-center xl:justify-between relative mt-5 ">
@@ -80,7 +80,7 @@ const Second = () => {
         <div className="flex-col gap-5 w-1/2 hidden xl:flex ">
           {amenities.map((item) => (
             <div className="flex justify-end w-full gap-2" key={item.name}>
-              <span className="font-semibold text-xl mt-5 text-nowrap text-right w-[300px]">
+              <span className="font-semibold text-xl mt-5 text-right w-[300px]">
                 {item.name}
               </span>
               <div className="w-full h-[800px] relative mx-5">
@@ -101,7 +101,7 @@ const Second = () => {
                 <div className="w-full h-[300px] relative ">
                   <Image src={item.image} alt="" fill />
                 </div>
-                <span className="font-semibold text-xl mt-5 text-nowrap ">
+                <span className="font-semibold text-xl mt-5 text-nowrap">
                   {item.name}
                 </span>
               </div>

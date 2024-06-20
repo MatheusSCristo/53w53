@@ -1,4 +1,4 @@
-"use client";
+    "use client";
 import Image from "next/image";
 import Link from "next/link";
 import { animateScroll as scroll } from "react-scroll";
@@ -109,7 +109,7 @@ const Footer = () => {
               Back to top
             </button>
           </Button>
-          <div className="flex flex-col xl:gap-2 text-lg justify-center items-center">
+          <div className="flex flex-col xl:flex-row xl:gap-2 text-lg justify-center items-center">
             <Button>
               <Link
                 href="https://dos.ny.gov/system/files/documents/2021/08/fairhousingnotice.pdf"

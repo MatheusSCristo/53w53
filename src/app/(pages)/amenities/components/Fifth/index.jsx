@@ -3,7 +3,7 @@ import Image from "next/image";
 const Fifth = () => {
   return (
     <section className="p-4 flex flex-col gap-12">
-      <h1 className=" uppercase text-[10vw]  leading-[10vw] xl:text-[7vw] xl:leading-[7vw] w-full md:w-[800px] xl:w-[900px]  p-4 font-medium ">
+      <h1 className=" uppercase text-[10vw]  leading-[10vw] xl:text-[7vw] xl:leading-[7vw] w-full md:w-[1000px] xl:w-[1200px]  p-4 font-medium ">
         WORLD-CLASS CUISINE
       </h1>
       <div className="flex gap-10 flex-col xl:flex-row ">

@@ -78,7 +78,7 @@ const Gallery = () => {
         <div className="flex flex-col gap-5">
           <div className="flex gap-5">
             {options.map((item) => (
-              <span
+              <span key={item}
                 className={`${
                   selectedOption == item ? "opacity-1" : "opacity-[0.6]"
                 } text-xl font-semibold cursor-pointer`}
@@ -93,12 +93,13 @@ const Gallery = () => {
               {images[selectedOption]
                 .slice(0, images[selectedOption].length / 3)
                 .map((item) => (
-                  <Suspense fallback={<span>...</span>}>
+                  <Suspense fallback={<span>...</span>} key={item}>
                     <div className={`relative h-[500px] w-full `}>
                       <Image
                         src={`/images/${item}`}
                         layout="fill"
-                        objectFit="cover"
+                        className="object-cover"
+                        alt="Image"
                       />
                     </div>
                   </Suspense>
@@ -111,12 +112,13 @@ const Gallery = () => {
                   (2 * images[selectedOption].length) / 3
                 )
                 .map((item) => (
-                  <Suspense fallback={<span>...</span>}>
+                  <Suspense fallback={<span>...</span>} key={item}>
                     <div className={`relative h-[300px] w-full `}>
                       <Image
                         src={`/images/${item}`}
                         layout="fill"
-                        objectFit="cover"
+                        className="object-cover"
+                        alt="Image"
                       />
                     </div>
                   </Suspense>
@@ -126,12 +128,13 @@ const Gallery = () => {
               {images[selectedOption]
                 .slice((2 * images[selectedOption].length) / 3)
                 .map((item) => (
-                  <Suspense fallback={<span>...</span>}>
+                  <Suspense fallback={<span>...</span>} key={item}>
                     <div className={`relative h-[400px] w-full `}>
                       <Image
                         src={`/images/${item}`}
                         layout="fill"
-                        objectFit="cover"
+                        className="object-cover"
+                        alt="Image"
                       />
                     </div>
                   </Suspense>
